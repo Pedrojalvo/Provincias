@@ -1,4 +1,4 @@
-package Ejercicio21.dominio;
+package dominio;
 
 public class Localidad {
     private String nombre;
