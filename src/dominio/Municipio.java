@@ -1,31 +1,42 @@
-package  dominio;
-import java.until.*;
-public class  Municipio{
-        private String nombre;
-        private ArrayList <Localidad> localidades;
-        public Municipio (Sting nombre_){
-                 nombre = nombre_;
-                 localidades = new ArrayList <Localidad>();
-        }
-        public 	Municipio addLocalidad (localidad l){
-            localidad.add (l);
-            return this;
-        }
-        public String toString(){
-            Sting cad ="Localidad: _"+nombre +" _municipio: \n";
-            for ( Localidad l : localidades )
-                 cad+= (l + "\n");
-        return cad;
-        }
-        public int getPoblacion(){
-        int total = 0;
-        for (Localidad l : localidades){
-             total += l.getPoblaciones();
-             return total;
-             }
-        }
+package dominio;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-       }
+public class Municipio implements Serializable {
+    private static final long serialVersionUID = 1L;
+    private String nombre;
+    private List<Localidad> localidades = new ArrayList<>();
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void agregarLocalidad(Localidad localidad) {
+        localidades.add(localidad);
+    }
+
+    public int contarHabitantes() {
+        int totalHabitantes = 0;
+        for (Localidad localidad : localidades) {
+            totalHabitantes += localidad.getNumeroDeHabitantes();
+        }
+        return totalHabitantes;
+    }
+
+    @Override
+    public String toString() {
+        return "Municipio [nombre=" + nombre + ", localidades=" + localidades + "]";
+    }
+
+    public List<Localidad> getLocalidades() {
+        return localidades;
+    }
+}
 
 
 
