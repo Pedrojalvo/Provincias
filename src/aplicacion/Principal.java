@@ -1,10 +1,13 @@
 package aplicacion;
 
-import dominio.*;
+import Interfaz.Interfaz;
 
-public class Principal{
+public class Principal {
 
-    public static void main(String[]args){
+    public static void main(String[] args) {
+        Interfaz.main(args);
+    }
+}
 
 
 
