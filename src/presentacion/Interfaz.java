@@ -148,7 +148,7 @@ public class Interfaz {
         scanner.close();
     }
 
-    public static void main(String[] args) {
+    public static void ejecutar {
         Interfaz interfaz = new Interfaz();
         int opcion;
         boolean running = true;
